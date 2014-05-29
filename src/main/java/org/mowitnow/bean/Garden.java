@@ -1,16 +1,17 @@
 package org.mowitnow.bean;
 
 import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 
-/**
- * The garden
- */
 public class Garden {
 
     private int xMax;
     private int yMax;
 
     public Garden(int xMax, int yMax) {
+        Preconditions.checkArgument(xMax > 0);
+        Preconditions.checkArgument(yMax > 0);
+
         this.xMax = xMax;
         this.yMax = yMax;
     }
@@ -32,7 +33,6 @@ public class Garden {
     }
 
 
-
     @Override
     public String toString() {
         return Objects.toStringHelper(this)
@@ -43,8 +43,12 @@ public class Garden {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Garden that = (Garden) o;
 

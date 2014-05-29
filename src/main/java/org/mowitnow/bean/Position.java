@@ -1,6 +1,7 @@
 package org.mowitnow.bean;
 
 import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 
 /**
  * Created by home on 09/05/2014.
@@ -12,11 +13,14 @@ public class Position {
 
 
     public Position(int x, int y, Orientation orientation) {
+        Preconditions.checkArgument(x > 0);
+        Preconditions.checkArgument(y > 0);
+        Preconditions.checkNotNull(orientation);
+
         this.x = x;
         this.y = y;
         this.orientation = orientation;
     }
-
 
     public void moveToRight() {
         this.orientation = orientation.moveToRight();

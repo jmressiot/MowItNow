@@ -12,9 +12,6 @@ import org.mowitnow.parser.PositionParser;
 
 import java.util.List;
 
-/**
- * Created by home on 10/05/2014.
- */
 public class Programmer {
 
     private static final int MIN_LINES = 3;

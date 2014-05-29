@@ -2,9 +2,6 @@ package org.mowitnow.parser;
 
 import org.mowitnow.bean.Garden;
 
-/**
- * Created by home on 10/05/2014.
- */
 public class GardenParser extends AbstractParser<Garden> {
 
 

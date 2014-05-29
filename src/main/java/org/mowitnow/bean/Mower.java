@@ -4,9 +4,6 @@ import com.google.common.base.Preconditions;
 
 import java.util.List;
 
-/**
- * Created by home on 09/05/2014.
- */
 public class Mower {
 
     private Garden garden;

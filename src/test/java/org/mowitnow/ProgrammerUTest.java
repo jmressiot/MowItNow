@@ -1,27 +1,22 @@
 package org.mowitnow;
 
 import com.google.common.collect.Lists;
+import org.junit.Assert;
+import org.junit.Test;
 import org.mowitnow.bean.Mower;
 import org.mowitnow.bean.Orientation;
 import org.mowitnow.bean.Position;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.mowitnow.exception.ParserFileException;
 
-import java.io.File;
 import java.util.List;
 
-/**
- * Created by home on 10/05/2014.
- */
 public class ProgrammerUTest {
 
     private Programmer programmer;
 
 
     @Test
-    public void execute_withNominalCase_shouldReturnExpectedPositions() throws Exception{
+    public void execute_withNominalCase_shouldReturnExpectedPositions() throws Exception {
         // Given
         List<String> lines = Lists.newArrayList(
                 "5 5",
@@ -91,8 +86,6 @@ public class ProgrammerUTest {
         // Then
         Assert.assertEquals(expectedErrorMessage, errorMessage);
     }
-
-
 
 
     @Test

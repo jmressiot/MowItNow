@@ -5,9 +5,6 @@ import org.mowitnow.bean.Order;
 
 import java.util.List;
 
-/**
- * Created by home on 10/05/2014.
- */
 public class OrdersParser extends AbstractParser<List<Order>> {
 
     public OrdersParser(String line) {
@@ -27,7 +24,13 @@ public class OrdersParser extends AbstractParser<List<Order>> {
 
     @Override
     protected String getRegex() {
-        return "^[ADG]{1,}$";
+        Order[] orders = Order.values();
+        String orderList = "";
+        for (Order order : orders) {
+            orderList = orderList + order.name();
+        }
+
+        return "^[" + orderList + "]{1,}$";
     }
 
 }

@@ -3,9 +3,6 @@ package org.mowitnow.parser;
 import org.mowitnow.bean.Orientation;
 import org.mowitnow.bean.Position;
 
-/**
- * Created by home on 10/05/2014.
- */
 public class PositionParser extends AbstractParser<Position> {
 
     public PositionParser(String line) {
@@ -24,8 +21,13 @@ public class PositionParser extends AbstractParser<Position> {
 
     @Override
     protected String getRegex() {
-        return "^[0-9] [0-9] [NSEO]$";
+
+        Orientation[] orientations = Orientation.values();
+        String orientationList = "";
+        for (Orientation orientation : orientations) {
+            orientationList = orientationList + orientation.name();
+        }
+
+        return "^[0-9] [0-9] [" + orientationList + "]$";
     }
-
-
 }

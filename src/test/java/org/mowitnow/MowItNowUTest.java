@@ -5,9 +5,6 @@ import org.mowitnow.exception.ParserFileException;
 
 import java.nio.file.NoSuchFileException;
 
-/**
- * Created by home on 25/05/2014.
- */
 public class MowItNowUTest {
 
     @Test

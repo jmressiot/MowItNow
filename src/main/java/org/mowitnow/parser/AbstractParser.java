@@ -2,9 +2,6 @@ package org.mowitnow.parser;
 
 import org.mowitnow.exception.ParserFileException;
 
-/**
- * Created by home on 10/05/2014.
- */
 public abstract class AbstractParser<T> {
 
     public static final String SEPARATOR = " ";
