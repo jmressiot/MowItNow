@@ -1,7 +1,9 @@
 package org.mowitnow;
 
-import org.junit.Assert;
 import org.junit.Test;
+import org.mowitnow.exception.ParserFileException;
+
+import java.nio.file.NoSuchFileException;
 
 /**
  * Created by home on 25/05/2014.
@@ -9,20 +11,40 @@ import org.junit.Test;
 public class MowItNowUTest {
 
     @Test
-    public void main_withFileInParams_shouldReturnNoError() {
+    public void main_withFileInParams_shouldReturnNoError() throws Exception {
         // Given
-        boolean hasError = false;
-        String[] args = new String[1];
-        args[0] = "input.txt";
+        String[] args = new String[]{"input.txt"};
 
         // When
-        try {
-            MowItNow.main(args);
-        } catch (Exception e) {
-            hasError = true;
-        }
+        MowItNow.main(args);
+    }
 
-        // Then
-        Assert.assertFalse(hasError);
+
+    @Test(expected = NoSuchFileException.class)
+    public void main_withNullArg_shouldThrowNoSuchFileException() throws Exception {
+        // Given
+        String[] args = null;
+
+        // When
+        MowItNow.main(args);
+    }
+
+    @Test(expected = NoSuchFileException.class)
+    public void main_withUnknownFile_shouldThrowNoSuchFileException() throws Exception {
+        // Given
+        String[] args = new String[]{"unknown.txt"};
+
+        // When
+        MowItNow.main(args);
+    }
+
+
+    @Test(expected = ParserFileException.class)
+    public void main_withErrorFile_shouldThrowParserFileException() throws Exception {
+        // Given
+        String[] args = new String[]{"input_with_error.txt"};
+
+        // When
+        MowItNow.main(args);
     }
 }
