@@ -20,35 +20,15 @@ public class Garden {
         return xMax;
     }
 
-    public void setXMax(int xMax) {
-        this.xMax = xMax;
-    }
-
     public int getYMax() {
         return yMax;
     }
 
-    public void setYMax(int yMax) {
-        this.yMax = yMax;
-    }
-
-
-    @Override
-    public String toString() {
-        return Objects.toStringHelper(this)
-                .add("xMax", xMax)
-                .add("yMax", yMax)
-                .toString();
-    }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Garden that = (Garden) o;
 
@@ -59,5 +39,14 @@ public class Garden {
     @Override
     public int hashCode() {
         return Objects.hashCode(xMax, yMax);
+    }
+
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                .add("xMax", xMax)
+                .add("yMax", yMax)
+                .toString();
     }
 }

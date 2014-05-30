@@ -62,13 +62,37 @@ public class ProgrammerUTest {
 
 
     @Test
-    public void execute_withError_shouldThrowParserFileExceptionWithExpectedMessage() {
+    public void execute_withEvenNumberLines_shouldThrowParserFileExceptionWithExpectedMessage() {
         // Given
         List<String> lines = Lists.newArrayList(
                 "5 5",
                 "1 2 N",
                 "GAGAGAGAA",
                 "3 3 E"
+        );
+        String expectedErrorMessage = "Error when reading file: the numbers of lines is incorrect";
+        String errorMessage = null;
+
+
+        programmer = new Programmer(lines);
+
+        // When
+        try {
+            programmer.execute();
+        } catch (ParserFileException e) {
+            errorMessage = e.getMessage();
+        }
+
+        // Then
+        Assert.assertEquals(expectedErrorMessage, errorMessage);
+    }
+
+    @Test
+    public void execute_withNotEnoughLines_shouldThrowParserFileExceptionWithExpectedMessage() {
+        // Given
+        List<String> lines = Lists.newArrayList(
+                "5 5",
+                "1 2 N"
         );
         String expectedErrorMessage = "Error when reading file: the numbers of lines is incorrect";
         String errorMessage = null;
@@ -165,5 +189,4 @@ public class ProgrammerUTest {
         // Then
         Assert.assertEquals(expectedErrorMessage, errorMessage);
     }
-
 }

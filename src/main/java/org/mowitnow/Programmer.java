@@ -93,6 +93,4 @@ public class Programmer {
 
         return (lines.size() - 1) / 2;
     }
-
-
 }

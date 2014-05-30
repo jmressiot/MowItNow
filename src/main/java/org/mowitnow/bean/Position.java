@@ -3,9 +3,7 @@ package org.mowitnow.bean;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 
-/**
- * Created by home on 09/05/2014.
- */
+
 public class Position {
     private int x;
     private int y;
@@ -13,8 +11,8 @@ public class Position {
 
 
     public Position(int x, int y, Orientation orientation) {
-        Preconditions.checkArgument(x > 0);
-        Preconditions.checkArgument(y > 0);
+        Preconditions.checkArgument(x >= 0);
+        Preconditions.checkArgument(y >= 0);
         Preconditions.checkNotNull(orientation);
 
         this.x = x;
@@ -60,24 +58,12 @@ public class Position {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
     public int getY() {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public Orientation getOrientation() {
         return orientation;
-    }
-
-    public void setOrientation(Orientation orientation) {
-        this.orientation = orientation;
     }
 
 
@@ -111,6 +97,4 @@ public class Position {
                 .add("orientation", orientation)
                 .toString();
     }
-
-
 }

@@ -7,9 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-/**
- * Created by home on 25/05/2014.
- */
 public class FileUtils {
 
     /**
