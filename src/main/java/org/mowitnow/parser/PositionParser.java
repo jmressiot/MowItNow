@@ -11,7 +11,7 @@ public class PositionParser extends AbstractParser<Position> {
 
     @Override
     protected Position process() {
-        String[] positionTab = line.split(SEPARATOR);
+        String[] positionTab = getLine().split(SEPARATOR);
         return new Position(
                 Integer.parseInt(positionTab[0]),
                 Integer.parseInt(positionTab[1]),

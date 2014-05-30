@@ -15,7 +15,7 @@ public class OrdersParser extends AbstractParser<List<Order>> {
     protected List<Order> process() {
         List<Order> orders = Lists.newArrayList();
 
-        char[] orderTab = line.trim().toCharArray();
+        char[] orderTab = getLine().trim().toCharArray();
         for (char order : orderTab) {
             orders.add(Order.valueOf(Character.toString(order)));
         }

@@ -11,7 +11,7 @@ public class GardenParser extends AbstractParser<Garden> {
 
     @Override
     protected Garden process() {
-        String[] gardenParams = line.split(SEPARATOR);
+        String[] gardenParams = getLine().split(SEPARATOR);
         return new Garden(Integer.parseInt(gardenParams[0]), Integer.parseInt(gardenParams[1]));
     }
 

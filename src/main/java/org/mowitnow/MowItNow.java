@@ -6,7 +6,10 @@ import java.io.File;
 import java.nio.file.NoSuchFileException;
 import java.util.List;
 
-public class MowItNow {
+public final class MowItNow {
+
+    private MowItNow() {
+    }
 
     public static void main(String[] args) throws Exception {
 

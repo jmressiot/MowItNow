@@ -5,7 +5,7 @@ import org.mowitnow.exception.ParserFileException;
 public abstract class AbstractParser<T> {
 
     public static final String SEPARATOR = " ";
-    protected String line;
+    private String line;
 
     public AbstractParser(String line) {
         this.line = line;
@@ -22,5 +22,9 @@ public abstract class AbstractParser<T> {
         }
 
         return process();
+    }
+
+    protected String getLine() {
+        return line;
     }
 }
