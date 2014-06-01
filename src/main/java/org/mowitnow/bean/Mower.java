@@ -1,10 +1,13 @@
 package org.mowitnow.bean;
 
 import com.google.common.base.Preconditions;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 public class Mower {
+
+    private static final Logger LOGGER = Logger.getLogger(Mower.class);
 
     private Garden garden;
     private Position position;
@@ -37,7 +40,7 @@ public class Mower {
     }
 
     public void printPosition() {
-        System.out.println(position.getX() + " " + position.getY() + " " + position.getOrientation().name());
+        LOGGER.info(position.getX() + " " + position.getY() + " " + position.getOrientation().name());
     }
 
     public Position getPosition() {

@@ -121,7 +121,7 @@ public class ProgrammerUTest {
                 "1 2 N",
                 "AADAADADDA"
         );
-        String expectedErrorMessage = "Error when parsing file on line: " + gardenLine;
+        String expectedErrorMessage = "Please check the following line: " + gardenLine;
         String errorMessage = null;
 
 
@@ -147,7 +147,7 @@ public class ProgrammerUTest {
                 positionLine,
                 "AADAADADDA"
         );
-        String expectedErrorMessage = "Error when parsing file on line: " + positionLine;
+        String expectedErrorMessage = "Please check the following line: " + positionLine;
         String errorMessage = null;
 
 
@@ -173,7 +173,7 @@ public class ProgrammerUTest {
                 "1 2 N",
                 ordersLine
         );
-        String expectedErrorMessage = "Error when parsing file on line: " + ordersLine;
+        String expectedErrorMessage = "Please check the following line: " + ordersLine;
         String errorMessage = null;
 
 

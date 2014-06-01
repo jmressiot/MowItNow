@@ -18,7 +18,7 @@ public abstract class AbstractParser<T> {
     public T decode() throws ParserFileException {
 
         if (!line.matches(getRegex())) {
-            throw new ParserFileException("Error when parsing file on line: " + line);
+            throw new ParserFileException("Please check the following line: " + line);
         }
 
         return process();
