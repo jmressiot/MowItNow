@@ -49,7 +49,7 @@ public class MowItNowUTest {
     @Test
     public void main_withNullArg_shouldLogExpectedErrorMessage() {
         // Given
-        String expectedErrorMessage = "Please provide a file in argument";
+        String expectedErrorMessage = "Please provide a filename.";
 
         // When
         MowItNow.main(null);
@@ -64,7 +64,7 @@ public class MowItNowUTest {
     public void main_withEmptyArg_shouldLogExpectedErrorMessage() {
         // Given
         String[] args = new String[]{"nowhere"};
-        String expectedErrorMessage = "Exception when reading file. Please check your file in argument.";
+        String expectedErrorMessage = "Exception when reading file. Please check your filename.";
 
         // When
         MowItNow.main(args);

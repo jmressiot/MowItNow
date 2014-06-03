@@ -18,9 +18,8 @@ public final class MowItNow {
     public static void main(String[] args) {
 
         try {
-
             if (args == null || args.length == 0) {
-                LOGGER.error("Please provide a file in argument");
+                LOGGER.error("Please provide a filename.");
                 return;
             }
             List<String> lines = FileUtils.readFile(new File(args[0]));
@@ -29,11 +28,10 @@ public final class MowItNow {
             programmer.execute();
 
         } catch (IOException e) {
-            LOGGER.error("Exception when reading file. Please check your file in argument.");
+            LOGGER.error("Exception when reading file. Please check your filename.");
         } catch (ParserFileException e) {
             LOGGER.error(e.getMessage());
         }
     }
-
 }
 
